@@ -45,6 +45,12 @@ end
 
 export type Scheduler = typeof(Scheduler.new())
 
+function Scheduler:scheduleSystems(systems: { System })
+	for _, system in systems do
+		self:scheduleSystem(system)
+	end
+end
+
 function Scheduler:scheduleSystem(system: System)
 	if self._registered[system] then
 		return

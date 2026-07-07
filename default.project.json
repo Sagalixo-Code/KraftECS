@@ -12,15 +12,15 @@
       },
       "Lib": {
         "$path": "Lib"
-      },
-      "Example": {
-        "$path": "Example"
       }
     },
 
     "ServerScriptService": {
       "Server": {
         "$path": "src/server"
+      },
+      "Example": {
+        "$path": "Example"
       }
     },
 

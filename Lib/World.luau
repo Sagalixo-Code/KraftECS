@@ -218,6 +218,16 @@ function World:set(entity: EntityId, component: ComponentId, value: any)
 	self._commandBuffer:flush(self)
 end
 
+function World:count(): number
+	local count = 0
+
+	for _, archetype: Archetype.Archetype in self._archetypes do
+		count += #archetype.entities
+	end
+
+	return count
+end
+
 function World:get(entity: EntityId, componentId: ComponentId): any
 	local location = self:_getLocation(entity)
 	return location.archetype:getRow(componentId, location.row)
