@@ -68,7 +68,9 @@ function Scheduler:disable(system)
 end
 
 function Scheduler:enable(system)
-	if not self._systemState[system] then
+	local state = self._systemState[system]
+
+	if not state then
 		return
 	end
 
