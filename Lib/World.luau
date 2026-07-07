@@ -227,6 +227,10 @@ function World:query(...: ComponentId): QueryResult.QueryResult
 	local componentIds = { ... }
 	local candidateSet: { [ArchetypeClass]: true }? = nil
 
+	if #componentIds == 0 then
+		return QueryResult.new({}, {})
+	end
+
 	for _, componentId in componentIds do
 		local archetypesWithComponent = self._componentToArchetypes[componentId]
 
