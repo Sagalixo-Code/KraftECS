@@ -12,7 +12,7 @@ local INDEX_LIMIT = 2 ^ INDEX_BITS -- 16_777_216
 local INDEX_MASK = INDEX_LIMIT - 1
 
 function Entity.pack(index: Index, generation: Generation): EntityId
-	assert(index >= 0 and index <= INDEX_MASK, "Entity index fora do range (24 bits).")
+	assert(index >= 0 and index <= INDEX_MASK, "Entity index out of range (24 bits).")
 	return generation * INDEX_LIMIT + index
 end
 
