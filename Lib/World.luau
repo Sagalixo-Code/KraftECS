@@ -40,8 +40,6 @@ end
 
 export type World = typeof(World.new())
 
---// Private
-
 function World:_allocateIndex(): Entity.Index
 	local free = self._freeIndices
 
@@ -189,8 +187,6 @@ function World:_notifyChanged(componentId: ComponentId, entity: EntityId, value:
 		listener(entity, value)
 	end
 end
-
---// Public
 
 function World:spawn(): EntityId
 	local index = self:_allocateIndex()
