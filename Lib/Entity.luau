@@ -8,7 +8,7 @@ export type Generation = number
 local Entity = {}
 
 local INDEX_BITS = 24
-local INDEX_LIMIT = 2 ^ INDEX_BITS -- 16_777_216
+local INDEX_LIMIT = 2 ^ INDEX_BITS
 local INDEX_MASK = INDEX_LIMIT - 1
 
 function Entity.pack(index: Index, generation: Generation): EntityId
