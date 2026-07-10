@@ -65,7 +65,7 @@ function World:exists(entity: EntityId): boolean
 end
 
 function World:_requireEntity(entity: EntityId)
-	assert(self:exists(entity), ("Entity '%d' não existe (ou já foi despawnada)."):format(entity))
+	assert(self:exists(entity), ("Entity '%d' dont exist."):format(entity))
 end
 
 function World:_getLocation(entity: EntityId): Location
